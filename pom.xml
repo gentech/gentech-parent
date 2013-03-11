@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>eu.gentech</groupId>
+	<artifactId>gentech-parent</artifactId>
+	<version>1</version>
+	<packaging>pom</packaging>
+
+	<name>GenTech Parent</name>
+
+	<url>https://github.com/gentech/gentech-parent</url>
+
+	<properties>
+		<java.build.sourceVersion>1.6</java.build.sourceVersion>
+		<java.build.targetVersion>1.6</java.build.targetVersion>
+		<java.build.sourceEncoding>UTF-8</java.build.sourceEncoding>
+	</properties>
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<source>${java.build.sourceVersion}</source>
+						<target>${java.build.targetVersion}</target>
+						<encoding>${java.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.6</version>
+					<configuration>
+						<stylesheet>maven</stylesheet>
+						<encoding>${java.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.2.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<encoding>${java.build.sourceEncoding}</encoding>
+						<minmemory>128m</minmemory>
+						<maxmemory>512m</maxmemory>
+						<links>
+							<link>http://docs.oracle.com/javase/6/docs/api/</link>
+							<link>http://docs.oracle.com/javaee/6/api/</link>
+						</links>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>2.3.7</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+		<repository>
+			<id>jboss</id>
+			<url>http://repository.jboss.com/</url>
+		</repository>
+		<repository>
+			<id>codehaus</id>
+			<url>http://repository.codehaus.org</url>
+		</repository>
+		<repository>
+			<id>sourceforge</id>
+			<url>http://oss.sonatype.org/content/groups/sourceforge/</url>
+		</repository>
+		<repository>
+			<id>java.net</id>
+			<url>http://download.java.net/maven/2</url>
+		</repository>
+		<repository>
+			<id>terracotta</id>
+			<url>http://repo.terracotta.org/maven2</url>
+		</repository>
+		<repository>
+			<id>apache</id>
+			<url>https://repository.apache.org/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>iona</id>
+			<url>http://repo.open.iona.com/maven2-all</url>
+		</repository>
+		<repository>
+			<id>The Buzz Media Maven Repository</id>
+			<url>http://maven.thebuzzmedia.com</url>
+		</repository>
+		<repository>
+			<id>thirdparty-releases</id>
+			<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
+		</repository>
+		<repository>
+			<id>m.g.o</id>
+			<url>http://maven.glassfish.org/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>twdata-repository</id>
+			<url>http://twdata-m2-repository.googlecode.com/svn/</url>
+		</repository>
+	</repositories>
+
+</project>
